@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Contact Brew &amp; Bean Cafe.">
+  <title>Brew &amp; Bean Cafe - Contact</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <nav>
+      <div class="logo">Brew &amp; Bean Cafe</div>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+
+    <section class="page-title">
+      <h1>Contact Us</h1>
+      <p>Send us your feedback or questions.</p>
+    </section>
+
+    <section class="box">
+      <h2>Your Details</h2>
+
+      <!-- onsubmit runs checkForm() from script.js when the button is clicked.
+           "return false" inside it stops the page from reloading. -->
+      <form id="contact-form" onsubmit="return checkForm()">
+
+        <!-- label for="fullname" is linked to the input with id="fullname".
+             Clicking the label selects the input, and screen readers can read it. -->
+        <label for="fullname">Full Name</label>
+        <!-- required = the browser will not submit an empty field -->
+        <input type="text" id="fullname" placeholder="Enter your name" required>
+        <span class="error" id="name-error"></span> <!-- error message appears here -->
+
+        <label for="phone">Phone Number</label>
+        <!-- type="tel" is for phone numbers, maxlength limits the digits -->
+        <input type="tel" id="phone" placeholder="10 digit mobile number" maxlength="10" required>
+        <span class="error" id="phone-error"></span>
+
+        <label for="email">Email</label>
+        <!-- type="email" makes the browser check the email format -->
+        <input type="email" id="email" placeholder="you@example.com" required>
+        <span class="error" id="email-error"></span>
+
+        <label for="message">Message</label>
+        <textarea id="message" rows="4" placeholder="Write your message" required></textarea>
+
+        <button type="submit" class="btn">Send Message</button>
+      </form>
+
+      <p id="form-message" class="message"></p>
+    </section>
+
+    <!-- Table: cafe timings -->
+    <section class="box">
+      <h2>Cafe Timings</h2>
+      <table>
+        <thead> <!-- thead = heading row -->
+          <tr> <!-- tr = row, th = heading cell -->
+            <th>Day</th><th>Opening Time</th><th>Closing Time</th>
+          </tr>
+        </thead>
+        <tbody> <!-- tbody = main rows, td = normal cell -->
+          <tr><td>Monday - Friday</td><td>8:00 AM</td><td>10:00 PM</td></tr>
+          <tr><td>Saturday - Sunday</td><td>9:00 AM</td><td>11:00 PM</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Brew &amp; Bean Cafe | CSE326 CA1 Project</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

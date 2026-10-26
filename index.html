@@ -1,0 +1,72 @@
+<!DOCTYPE html> <!-- tells the browser this is an HTML5 page -->
+<html lang="en"> <!-- lang = language of the page, helps screen readers -->
+<head>
+  <meta charset="UTF-8"> <!-- allows all characters, like the rupee sign -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- makes the page fit mobile screens -->
+  <meta name="description" content="Brew &amp; Bean Cafe - fresh coffee, snacks and desserts."> <!-- short text for search engines (SEO) -->
+  <title>Brew &amp; Bean Cafe - Home</title> <!-- text shown on the browser tab -->
+  <link rel="stylesheet" href="style.css"> <!-- connects the CSS file -->
+</head>
+<body>
+
+  <!-- header = top part of the page -->
+  <header>
+    <!-- nav = navigation links. The links are written as a list (ul and li) -->
+    <nav>
+      <div class="logo">Brew &amp; Bean Cafe</div>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- main = the main content of the page -->
+  <main>
+
+    <!-- Hero section: big welcome box -->
+    <section class="hero">
+      <!-- A simple SVG picture made with a circle and a rectangle -->
+      <svg width="80" height="80">
+        <circle cx="40" cy="40" r="35" fill="#c8873a"></circle>
+        <rect x="25" y="30" width="30" height="25" fill="white"></rect>
+      </svg>
+      <h1>Welcome to Brew &amp; Bean Cafe</h1>
+      <p>Fresh coffee, tasty snacks and sweet desserts.</p>
+      <a href="menu.html" class="btn">View Our Menu</a>
+    </section>
+
+    <!-- Features section: three boxes side by side (Flexbox in CSS) -->
+    <section class="features">
+      <!-- article = a small independent block of content -->
+      <article>
+        <h2>Fresh Coffee</h2>
+        <p>Espresso, Cappuccino, Latte and Cold Coffee.</p>
+      </article>
+      <article>
+        <h2>Tasty Snacks</h2>
+        <p>Sandwiches, burgers, fries and garlic bread.</p>
+      </article>
+      <article>
+        <h2>Sweet Desserts</h2>
+        <p>Brownies, cheesecake, pastries and waffles.</p>
+      </article>
+    </section>
+
+    <!-- About section -->
+    <section class="about">
+      <h2>About Us</h2>
+      <p>Brew &amp; Bean Cafe is a small cafe where friends meet and enjoy good food.
+         Choose your items, pick a flavour, add toppings and order online.</p>
+    </section>
+
+  </main>
+
+  <!-- footer = bottom part of the page -->
+  <footer>
+    <p>&copy; 2026 Brew &amp; Bean Cafe | CSE326 CA1 Project</p>
+  </footer>
+
+</body>
+</html>

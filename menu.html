@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Brew &amp; Bean Cafe menu - choose a flavour, add toppings and order.">
+  <title>Brew &amp; Bean Cafe - Menu</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <nav>
+      <div class="logo">Brew &amp; Bean Cafe</div>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="#cart">Cart</a></li> <!-- #cart jumps to the cart section on this page -->
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+
+    <section class="page-title">
+      <h1>Our Menu</h1>
+      <p>Choose a flavour, add toppings and click "Add to Cart".</p>
+    </section>
+
+    <!-- Filter: radio buttons. Same name="category" means only ONE can be selected.
+         onchange="showMenu()" runs the JavaScript function when the user picks another one. -->
+    <section class="filters">
+      <b>Show:</b>
+      <label><input type="radio" name="category" value="All" checked onchange="showMenu()"> All</label>
+      <label><input type="radio" name="category" value="Coffee" onchange="showMenu()"> Coffee</label>
+      <label><input type="radio" name="category" value="Snacks" onchange="showMenu()"> Snacks</label>
+      <label><input type="radio" name="category" value="Desserts" onchange="showMenu()"> Desserts</label>
+    </section>
+
+    <!-- This section is empty here. script.js fills it with the menu cards. -->
+    <section id="menu-list" class="grid"></section>
+
+    <!-- Cart section. script.js fills the list and the total. -->
+    <section id="cart" class="box">
+      <h2>Your Cart</h2>
+      <ul id="cart-items"></ul>
+      <p class="total">Total: &#8377;<span id="cart-total">0</span></p>
+      <button class="btn" onclick="placeOrder()">Place Order</button> <!-- onclick runs placeOrder() from script.js -->
+      <p id="order-msg" class="message"></p>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Brew &amp; Bean Cafe | CSE326 CA1 Project</p>
+  </footer>
+
+  <!-- The JavaScript file is linked at the bottom so the page loads first -->
+  <script src="script.js"></script>
+</body>
+</html>
