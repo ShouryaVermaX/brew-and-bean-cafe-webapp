@@ -1,62 +1,399 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Brew &amp; Bean Cafe menu - choose a flavour, add toppings and order.">
-  <title>Brew &amp; Bean Cafe - Menu</title>
-  <link rel="stylesheet" href="style.css">
+<!-- saved from url=(0054)file:///C:/Users/DELL/Desktop/cse326%20html/hacka.HTML -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>Cafe Delight - Menu</title>
+<meta name="description" content="Cafe Delight menu, gallery and order form">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+
+/* ===== GENERAL / BODY ===== */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f5ede0;
+  color: #3b2a20;
+  margin: 0;
+  padding: 0;
+}
+
+/* ===== HEADER ===== */
+header {
+  background-color: #6f4e37;
+  color: #fbf3e6;
+  text-align: center;
+  padding: 20px;
+}
+
+header h1 {
+  font-size: 36px;
+  margin: 0 0 5px 0;
+}
+
+header p {
+  font-size: 16px;
+  margin: 0 0 10px 0;
+}
+
+header svg {
+  display: block;
+  margin: 10px auto;
+}
+
+/* ===== NAV ===== */
+nav {
+  margin-top: 12px;
+}
+
+nav a {
+  color: #fbf3e6;
+  text-decoration: none;
+  font-size: 16px;
+  margin: 0 5px;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+/* ===== MAIN ===== */
+main {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 0 20px;
+}
+
+/* ===== SECTION GENERAL ===== */
+section {
+  margin-bottom: 40px;
+  background-color: #fffaf2;
+  padding: 20px;
+  border: 1px solid #e6d5bf;
+  border-radius: 6px;
+}
+
+section h2 {
+  color: #6f4e37;
+  border-bottom: 2px solid #c19a6b;
+  padding-bottom: 6px;
+  margin-top: 0;
+}
+
+section h3 {
+  color: #8a5a3c;
+}
+
+/* ===== TABLE ===== */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+table caption {
+  font-size: 18px;
+  font-weight: bold;
+  color: #6f4e37;
+  margin-bottom: 8px;
+}
+
+table th {
+  background-color: #6f4e37;
+  color: #fbf3e6;
+  padding: 10px;
+  text-align: left;
+  border: 1px solid #e0cdb2;
+}
+
+table td {
+  padding: 10px;
+  border: 1px solid #e0cdb2;
+}
+
+table tbody tr:nth-child(even) {
+  background-color: #f8f0e4;
+}
+
+table tbody tr:hover {
+  background-color: #efe0cb;
+}
+
+/* ===== LISTS ===== */
+ul, ol {
+  padding-left: 20px;
+  line-height: 1.8;
+}
+
+ul li {
+  list-style-type: disc;
+}
+
+ol li {
+  list-style-type: decimal;
+}
+
+/* ===== GALLERY ===== */
+#gallery img {
+  width: 200px;
+  height: 150px;
+  object-fit: cover;
+  margin: 5px;
+  border: 3px solid #c19a6b;
+  border-radius: 4px;
+}
+
+/* ===== VIDEO ===== */
+#tour video {
+  display: block;
+  margin-top: 10px;
+  border: 3px solid #c19a6b;
+  border-radius: 4px;
+}
+
+/* ===== IFRAME / MAP ===== */
+#location iframe {
+  display: block;
+  margin-top: 10px;
+  border: 3px solid #c19a6b;
+  border-radius: 4px;
+}
+
+/* ===== FORM ===== */
+form label {
+  font-weight: bold;
+  color: #5a4636;
+}
+
+form input[type="text"],
+form input[type="email"],
+form select,
+form textarea {
+  width: 100%;
+  max-width: 350px;
+  padding: 8px;
+  margin-top: 4px;
+  border: 1px solid #d4bfa3;
+  border-radius: 4px;
+  background-color: #fffdf8;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+form input[type="text"]:focus,
+form input[type="email"]:focus,
+form select:focus,
+form textarea:focus {
+  outline: none;
+  border-color: #8a5a3c;
+}
+
+form input[type="radio"],
+form input[type="checkbox"] {
+  margin-right: 6px;
+  accent-color: #8a5a3c;
+}
+
+form p {
+  font-weight: bold;
+  margin-bottom: 6px;
+  color: #5a4636;
+}
+
+form button[type="submit"] {
+  background-color: #8a5a3c;
+  color: #fbf3e6;
+  border: none;
+  padding: 10px 28px;
+  font-size: 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 6px;
+}
+
+form button[type="submit"]:hover {
+  background-color: #6f4e37;
+}
+
+/* ===== HR ===== */
+hr {
+  border: none;
+  border-top: 2px solid #c19a6b;
+  margin: 0;
+}
+
+/* ===== FOOTER ===== */
+footer {
+  background-color: #6f4e37;
+  color: #fbf3e6;
+  text-align: center;
+  padding: 16px;
+}
+
+footer p {
+  margin: 4px 0;
+  font-size: 14px;
+}
+
+</style>
 </head>
 <body>
 
-  <header>
-    <nav>
-      <div class="logo">Brew &amp; Bean Cafe</div>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="menu.html">Menu</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li><a href="#cart">Cart</a></li> <!-- #cart jumps to the cart section on this page -->
-      </ul>
-    </nav>
-  </header>
+<!-- header part with logo and nav links -->
+<header>
+  <h1>Cafe Delight</h1>
+  <p>Best coffee and snacks in town</p>
+  <svg width="80" height="80">
+    <circle cx="40" cy="40" r="35" fill="#fbf3e6"></circle>
+    <text x="40" y="47" text-anchor="middle" font-size="22" font-family="Arial" fill="#6f4e37" font-weight="bold">CD</text>
+  </svg>
+  <nav>
+    <a href="file:///C:/Users/DELL/Desktop/cse326%20html/hacka.HTML#menu">Menu</a> |
+    <a href="file:///C:/Users/DELL/Desktop/cse326%20html/hacka.HTML#gallery">Gallery</a> |
+    <a href="file:///C:/Users/DELL/Desktop/cse326%20html/hacka.HTML#location">Location</a> |
+    <a href="file:///C:/Users/DELL/Desktop/cse326%20html/hacka.HTML#order">Order Now</a>
+  </nav>
+</header>
 
-  <main>
+<main>
 
-    <section class="page-title">
-      <h1>Our Menu</h1>
-      <p>Choose a flavour, add toppings and click "Add to Cart".</p>
-    </section>
+  <!-- ABOUT SECTION -->
+  <section id="about">
+    <h2>About Us</h2>
+    <p>Welcome to <strong>Cafe Delight</strong>. We serve fresh coffee, snacks
+    and desserts every day. <em>Come and enjoy with your friends!</em></p>
+  </section>
 
-    <!-- Filter: radio buttons. Same name="category" means only ONE can be selected.
-         onchange="showMenu()" runs the JavaScript function when the user picks another one. -->
-    <section class="filters">
-      <b>Show:</b>
-      <label><input type="radio" name="category" value="All" checked onchange="showMenu()"> All</label>
-      <label><input type="radio" name="category" value="Coffee" onchange="showMenu()"> Coffee</label>
-      <label><input type="radio" name="category" value="Snacks" onchange="showMenu()"> Snacks</label>
-      <label><input type="radio" name="category" value="Desserts" onchange="showMenu()"> Desserts</label>
-    </section>
+  <!-- MENU SECTION -->
+  <section id="menu">
+    <h2>Our Menu</h2>
+    <table border="1">
+      <caption>Price List</caption>
+      <thead>
+        <tr>
+          <th scope="col">Item</th>
+          <th scope="col">Price</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Cold Coffee</td>
+          <td>Rs 80</td>
+        </tr>
+        <tr>
+          <td>Cappuccino</td>
+          <td>Rs 90</td>
+        </tr>
+        <tr>
+          <td>Veg Sandwich</td>
+          <td>Rs 60</td>
+        </tr>
+        <tr>
+          <td>Pasta</td>
+          <td>Rs 120</td>
+        </tr>
+        <tr>
+          <td>Chocolate Cake</td>
+          <td>Rs 100</td>
+        </tr>
+      </tbody>
+    </table>
 
-    <!-- This section is empty here. script.js fills it with the menu cards. -->
-    <section id="menu-list" class="grid"></section>
+    <h3>Categories</h3>
+    <ul>
+      <li>Beverages</li>
+      <li>Snacks</li>
+      <li>Desserts</li>
+    </ul>
 
-    <!-- Cart section. script.js fills the list and the total. -->
-    <section id="cart" class="box">
-      <h2>Your Cart</h2>
-      <ul id="cart-items"></ul>
-      <p class="total">Total: &#8377;<span id="cart-total">0</span></p>
-      <button class="btn" onclick="placeOrder()">Place Order</button> <!-- onclick runs placeOrder() from script.js -->
-      <p id="order-msg" class="message"></p>
-    </section>
+    <h3>How To Order</h3>
+    <ol>
+      <li>Check the menu above</li>
+      <li>Fill the order form at the bottom</li>
+      <li>Wait for confirmation call</li>
+    </ol>
+  </section>
 
-  </main>
+  <!-- GALLERY SECTION -->
+  <section id="gallery">
+    <h2>Gallery</h2>
+    <img src="file:///C:/Users/DELL/Desktop/cse326%20html/Cafe%20Delight%20-%20Menu%20cse326%20thoushith(12606463)project_files/pexels-photo-17576001.jpg" alt="Cold coffee glass" width="200" height="150">
+    <img src="file:///C:/Users/DELL/Desktop/cse326%20html/Cafe%20Delight%20-%20Menu%20cse326%20thoushith(12606463)project_files/pexels-photo-1647163.jpg" alt="Veg sandwich plate" width="200" height="150">
+    <img src="file:///C:/Users/DELL/Desktop/cse326%20html/Cafe%20Delight%20-%20Menu%20cse326%20thoushith(12606463)project_files/pexels-photo-2267868.jpg" alt="Chocolate cake slice" width="200" height="150">
+  </section>
 
-  <footer>
-    <p>&copy; 2026 Brew &amp; Bean Cafe | CSE326 CA1 Project</p>
-  </footer>
+  <!-- VIDEO SECTION -->
+  <section id="tour">
+    <h2>Take a Quick Tour</h2>
+    <video width="350" controls="">
+      <source src="https://videos.pexels.com/video-files/16234554/16234554-hd_1080_1920_29fps.mp4" type="video/mp4">
+      Sorry, your browser does not support video.
+    </video>
+  </section>
 
-  <!-- The JavaScript file is linked at the bottom so the page loads first -->
-  <script src="script.js"></script>
-</body>
-</html>
+  <!-- LOCATION SECTION -->
+  <section id="location">
+    <h2>Find Us Here</h2>
+
+    <!-- FIX: replaced broken local maps.html file with a working Google Maps embed URL -->
+    <iframe src="./Cafe Delight - Menu cse326 thoushith(12606463)project final take_files/maps.html" width="350" height="250" style="border:0;" allowfullscreen="" loading="lazy">
+    </iframe>
+
+  </section>
+
+  <!-- ORDER FORM SECTION -->
+  <section id="order">
+    <h2>Order / Feedback Form</h2>
+    <form action="file:///C:/submit" method="post">
+
+      <label for="name">Your Name:</label><br>
+      <input type="text" id="name" name="name" required=""><br><br>
+
+      <label for="email">Email:</label><br>
+      <input type="email" id="email" name="email" required=""><br><br>
+
+      <label for="phone">Phone Number:</label><br>
+      <input type="text" id="phone" name="phone" pattern="[0-9]{10}" title="Enter a 10 digit number"><br><br>
+
+      <label for="item">Select Item:</label><br>
+      <select id="item" name="item">
+        <option value="coffee">Cold Coffee</option>
+        <option value="sandwich">Veg Sandwich</option>
+        <option value="pasta">Pasta</option>
+        <option value="cake">Chocolate Cake</option>
+      </select><br><br>
+
+      <p>Spice Level:</p>
+      <input type="radio" id="mild" name="spice" value="mild">
+      <label for="mild">Mild</label><br>
+      <input type="radio" id="medium" name="spice" value="medium">
+      <label for="medium">Medium</label><br>
+      <input type="radio" id="hot" name="spice" value="hot">
+      <label for="hot">Hot</label><br><br>
+
+      <p>Extra Toppings:</p>
+      <input type="checkbox" id="cheese" name="toppings" value="cheese">
+      <label for="cheese">Extra Cheese</label><br>
+      <input type="checkbox" id="choco" name="toppings" value="chocolate">
+      <label for="choco">Chocolate Syrup</label><br>
+      <input type="checkbox" id="nuts" name="toppings" value="nuts">
+      <label for="nuts">Nuts</label><br><br>
+
+      <label for="msg">Any Feedback:</label><br>
+      <textarea id="msg" name="msg" rows="4" cols="30" minlength="10"></textarea><br><br>
+
+      <button type="submit">Submit</button>
+
+    </form>
+  </section>
+
+</main>
+
+<hr>
+
+<footer>
+  <p>© 2026 Cafe Delight. All rights reserved.</p>
+  <p>Made by [svs thulasi thoushith 12606463] - CSE 326 Project</p>
+</footer>
+
+
+
+</body></html>
