@@ -3,62 +3,176 @@
 <head>
   <meta charset="UTF-8"> <!-- allows all characters, like the rupee sign -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- makes the page fit mobile screens -->
-  <meta name="description" content="Brew &amp; Bean Cafe - fresh coffee, snacks and desserts."> <!-- short text for search engines (SEO) -->
-  <title>Brew &amp; Bean Cafe - Home</title> <!-- text shown on the browser tab -->
+  <meta name="description" content="Brew &amp; Bean Cafe - fresh coffee, snacks and desserts. See the menu, order online and find us on the map."> <!-- short text for search engines (SEO) -->
+  <title>Brew &amp; Bean Cafe</title> <!-- text shown on the browser tab -->
   <link rel="stylesheet" href="style.css"> <!-- connects the CSS file -->
 </head>
 <body>
 
-  <!-- header = top part of the page -->
+  <!-- header = top part of the page. It stays at the top while scrolling (see style.css) -->
   <header>
-    <!-- nav = navigation links. The links are written as a list (ul and li) -->
+    <!-- nav = navigation links. Each link goes to the section whose id matches (#menu, #cart ...) -->
     <nav>
       <div class="logo">Brew &amp; Bean Cafe</div>
       <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="menu.html">Menu</a></li>
-        <li><a href="contact.html">Contact</a></li>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#menu">Menu</a></li>
+        <li><a href="#cart">Cart</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
   </header>
 
-  <!-- main = the main content of the page -->
+  <!-- main = the main content. The whole website is one page; the user can scroll or click the links -->
   <main>
 
-    <!-- Hero section: big welcome box -->
-    <section class="hero">
-      <!-- A simple SVG picture made with a circle and a rectangle -->
-      <svg width="80" height="80">
-        <circle cx="40" cy="40" r="35" fill="#c8873a"></circle>
-        <rect x="25" y="30" width="30" height="25" fill="white"></rect>
-      </svg>
-      <h1>Welcome to Brew &amp; Bean Cafe</h1>
-      <p>Fresh coffee, tasty snacks and sweet desserts.</p>
-      <a href="menu.html" class="btn">View Our Menu</a>
+    <!-- ===== HOME ===== -->
+    <section id="home">
+
+      <!-- Hero: big welcome box -->
+      <div class="hero">
+        <!-- A simple SVG picture made with a circle and a rectangle -->
+        <svg width="80" height="80">
+          <circle cx="40" cy="40" r="35" fill="#c8873a"></circle>
+          <rect x="25" y="30" width="30" height="25" fill="white"></rect>
+        </svg>
+        <h1>Welcome to Brew &amp; Bean Cafe</h1>
+        <p>Fresh coffee, tasty snacks and sweet desserts.</p>
+        <a href="#menu" class="btn">View Our Menu</a>
+      </div>
+
+      <!-- Features: three boxes side by side (Flexbox in CSS) -->
+      <div class="features">
+        <!-- article = a small independent block of content -->
+        <article>
+          <h2>Fresh Coffee</h2>
+          <p>Espresso, Cappuccino, Latte and Cold Coffee.</p>
+        </article>
+        <article>
+          <h2>Tasty Snacks</h2>
+          <p>Sandwiches, burgers, fries and garlic bread.</p>
+        </article>
+        <article>
+          <h2>Sweet Desserts</h2>
+          <p>Brownies, cheesecake, pastries and waffles.</p>
+        </article>
+      </div>
+
+      <div class="about">
+        <h2>About Us</h2>
+        <p>Brew &amp; Bean Cafe is a small cafe where friends meet and enjoy good food.
+           Choose your items, pick a flavour, add toppings and order online.</p>
+      </div>
     </section>
 
-    <!-- Features section: three boxes side by side (Flexbox in CSS) -->
-    <section class="features">
-      <!-- article = a small independent block of content -->
-      <article>
-        <h2>Fresh Coffee</h2>
-        <p>Espresso, Cappuccino, Latte and Cold Coffee.</p>
-      </article>
-      <article>
-        <h2>Tasty Snacks</h2>
-        <p>Sandwiches, burgers, fries and garlic bread.</p>
-      </article>
-      <article>
-        <h2>Sweet Desserts</h2>
-        <p>Brownies, cheesecake, pastries and waffles.</p>
-      </article>
+    <!-- ===== MENU ===== -->
+    <section id="menu">
+      <h2 class="title">Our Menu</h2>
+      <p class="title">Choose a flavour, add toppings and click "Add to Cart".</p>
+
+      <!-- Filter: radio buttons. Same name="category" means only ONE can be selected.
+           onchange="showMenu()" runs the JavaScript function when the user picks another one. -->
+      <div class="filters">
+        <b>Show:</b>
+        <label><input type="radio" name="category" value="All" checked onchange="showMenu()"> All</label>
+        <label><input type="radio" name="category" value="Coffee" onchange="showMenu()"> Coffee</label>
+        <label><input type="radio" name="category" value="Snacks" onchange="showMenu()"> Snacks</label>
+        <label><input type="radio" name="category" value="Desserts" onchange="showMenu()"> Desserts</label>
+      </div>
+
+      <!-- This div is empty here. script.js fills it with the menu cards. -->
+      <div id="menu-list" class="grid"></div>
     </section>
 
-    <!-- About section -->
-    <section class="about">
-      <h2>About Us</h2>
-      <p>Brew &amp; Bean Cafe is a small cafe where friends meet and enjoy good food.
-         Choose your items, pick a flavour, add toppings and order online.</p>
+    <!-- ===== CART ===== -->
+    <section id="cart">
+      <div class="box">
+        <h2>Your Cart</h2>
+        <ul id="cart-items"></ul> <!-- script.js fills the list -->
+        <p class="total">Total: &#8377;<span id="cart-total">0</span></p>
+        <button class="btn" onclick="placeOrder()">Place Order</button> <!-- onclick runs placeOrder() from script.js -->
+        <p id="order-msg" class="message"></p>
+      </div>
+    </section>
+
+    <!-- ===== GALLERY ===== -->
+    <section id="gallery">
+      <h2 class="title">Gallery</h2>
+      <!-- img = picture. src = file name, alt = text for screen readers and when the picture does not load -->
+      <div class="gallery">
+        <img src="images/cafe1.jpg" alt="Cappuccino">
+        <img src="images/cafe2.jpg" alt="Fresh snacks">
+        <img src="images/cafe3.jpg" alt="Sweet desserts">
+        <img src="images/cafe4.jpg" alt="Cold coffee">
+        <img src="images/cafe5.jpg" alt="Cosy seating">
+        <img src="images/cafe6.jpg" alt="Waffles">
+      </div>
+    </section>
+
+    <!-- ===== CONTACT ===== -->
+    <section id="contact">
+      <h2 class="title">Contact Us</h2>
+
+      <div class="box">
+        <h2>Your Details</h2>
+
+        <!-- onsubmit runs checkForm() from script.js when the button is clicked.
+             "return false" inside it stops the page from reloading. -->
+        <form id="contact-form" onsubmit="return checkForm()">
+
+          <!-- label for="fullname" is linked to the input with id="fullname".
+               Clicking the label selects the input, and screen readers can read it. -->
+          <label for="fullname">Full Name</label>
+          <!-- required = the browser will not submit an empty field -->
+          <input type="text" id="fullname" placeholder="Enter your name" required>
+          <span class="error" id="name-error"></span> <!-- error message appears here -->
+
+          <label for="phone">Phone Number</label>
+          <!-- type="tel" is for phone numbers, maxlength limits the digits -->
+          <input type="tel" id="phone" placeholder="10 digit mobile number" maxlength="10" required>
+          <span class="error" id="phone-error"></span>
+
+          <label for="email">Email</label>
+          <!-- type="email" makes the browser check the email format -->
+          <input type="email" id="email" placeholder="you@example.com" required>
+          <span class="error" id="email-error"></span>
+
+          <label for="message">Message</label>
+          <textarea id="message" rows="4" placeholder="Write your message" required></textarea>
+
+          <button type="submit" class="btn">Send Message</button>
+        </form>
+
+        <p id="form-message" class="message"></p>
+      </div>
+
+      <!-- Google Map. iframe = shows another web page inside our page.
+           This map shows the cafe location. Change the text after q= to change the place. -->
+      <div class="box">
+        <h2>Find Us</h2>
+        <iframe title="Cafe location on Google Maps"
+                src="https://www.google.com/maps?q=Lovely+Professional+University+Phagwara&output=embed"
+                width="100%" height="300" loading="lazy"></iframe>
+        <p><a href="https://www.google.com/maps/search/?api=1&query=Lovely+Professional+University+Phagwara"
+              target="_blank">Open in Google Maps</a></p> <!-- target="_blank" opens in a new tab -->
+      </div>
+
+      <!-- Table: cafe timings -->
+      <div class="box">
+        <h2>Cafe Timings</h2>
+        <table>
+          <thead> <!-- thead = heading row -->
+            <tr> <!-- tr = row, th = heading cell -->
+              <th>Day</th><th>Opening Time</th><th>Closing Time</th>
+            </tr>
+          </thead>
+          <tbody> <!-- tbody = main rows, td = normal cell -->
+            <tr><td>Monday - Friday</td><td>8:00 AM</td><td>10:00 PM</td></tr>
+            <tr><td>Saturday - Sunday</td><td>9:00 AM</td><td>11:00 PM</td></tr>
+          </tbody>
+        </table>
+      </div>
     </section>
 
   </main>
@@ -68,5 +182,7 @@
     <p>&copy; 2026 Brew &amp; Bean Cafe | CSE326 CA1 Project</p>
   </footer>
 
+  <!-- The JavaScript file is linked at the bottom so the page loads first -->
+  <script src="script.js"></script>
 </body>
 </html>

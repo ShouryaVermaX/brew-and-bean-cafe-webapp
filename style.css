@@ -7,13 +7,19 @@
 body { font-family: Arial, sans-serif; background-color: var(--cream); line-height: 1.5; }
 main { max-width: 1000px; margin: auto; padding: 20px; }
 h1, h2 { color: var(--brown); }
-.about, .page-title { text-align: center; }
+.about, .center, .title { text-align: center; }
+.title { margin-top: 10px; }
+
+/* Smooth scrolling when a navbar link is clicked. scroll-margin-top keeps the heading below the sticky navbar. */
+html { scroll-behavior: smooth; }
+section { scroll-margin-top: 70px; padding: 20px 0; }
+header { position: sticky; top: 0; z-index: 10; }   /* navbar stays visible while scrolling */
 
 /* Navbar: Flexbox puts the logo and links in one row */
 header, footer { background-color: var(--brown); color: white; }
 nav { display: flex; justify-content: space-between; align-items: center; padding: 12px 20px; }
 .logo { font-size: 1.4rem; font-weight: bold; }
-nav ul { display: flex; list-style: none; gap: 20px; }
+nav ul { display: flex; flex-wrap: wrap; list-style: none; gap: 20px; }
 nav a { color: white; text-decoration: none; }
 nav a:hover { color: var(--accent); }   /* pseudo-class: when the mouse is over the link */
 footer { text-align: center; padding: 15px; margin-top: 30px; }
@@ -57,10 +63,21 @@ table { width: 100%; border-collapse: collapse; }
 th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
 th { background-color: var(--brown); color: white; }
 
+/* Gallery: Grid, images fill the row */
+.gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; }
+.gallery img { width: 100%; height: 180px; object-fit: cover; border-radius: 10px; transition: transform 0.3s; }
+.gallery img:hover { transform: scale(1.05); }
+
+/* Google Map */
+iframe { border: 0; border-radius: 8px; }
+.box h3 { color: var(--brown); margin-bottom: 8px; }
+
 /* Animation: the hero box slowly fades in */
 @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 
 /* Responsive design: on small screens, stack things in one column */
 @media (max-width: 600px) {
-  nav, .features { flex-direction: column; gap: 10px; }
+  nav, .features { flex-direction: column; align-items: center; gap: 10px; }
+  nav ul { flex-wrap: wrap; justify-content: center; gap: 12px; }
+  section { scroll-margin-top: 110px; }
 }

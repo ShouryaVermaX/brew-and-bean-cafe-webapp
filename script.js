@@ -1,4 +1,4 @@
-// Brew & Bean Cafe - script.js (used by menu.html and contact.html)
+// Brew & Bean Cafe - script.js (used by index.html: menu, cart and contact form)
 
 // ---------- DATA ----------
 
