@@ -99,10 +99,10 @@
       <h2 class="title">Gallery</h2>
       <!-- img = picture. src = file name, alt = text for screen readers and when the picture does not load -->
       <div class="gallery">
-        <img src="images/cafe1.jpg" alt="Cappuccino">
-        <img src="images/cafe2.jpg" alt="Fresh snacks">
-        <img src="images/cafe3.jpg" alt="Sweet desserts">
-        <img src="images/cafe4.jpg" alt="Cold coffee">
+        <img src="C:\Users\suren\OneDrive\Downloads\hazelnut-cappuccino.jpeg" alt="Cappuccino">
+        <img src="C:\Users\suren\OneDrive\Downloads\Freshsnacks.jpeg" alt="Fresh snacks">
+        <img src="C:\Users\suren\OneDrive\Downloads\desserts.jpeg" alt="Sweet desserts">
+        <img src="C:\Users\suren\OneDrive\Downloads\cold-coffee.jpeg" alt="Cold coffee">
       </div>
     </section>
 
