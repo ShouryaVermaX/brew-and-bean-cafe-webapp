@@ -1,17 +1,17 @@
-<!DOCTYPE html> <!-- tells the browser this is an HTML5 page -->
-<html lang="en"> <!-- lang = language of the page, helps screen readers -->
+<!DOCTYPE html> 
+<html lang="en"> 
 <head>
-  <meta charset="UTF-8"> <!-- allows all characters, like the rupee sign -->
+  <meta charset="UTF-8"> 
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- makes the page fit mobile screens -->
   <meta name="description" content="Brew &amp; Bean Cafe - fresh coffee, snacks and desserts. See the menu, order online and find us on the map."> <!-- short text for search engines (SEO) -->
-  <title>Brew &amp; Bean Cafe</title> <!-- text shown on the browser tab -->
+  <title>Brew &amp; Bean Cafe</title> 
   <link rel="stylesheet" href="style.css"> <!-- connects the CSS file -->
 </head>
 <body>
 
-  <!-- header = top part of the page. It stays at the top while scrolling (see style.css) -->
+  <!-- header = top part of the page.-->
   <header>
-    <!-- nav = navigation links. Each link goes to the section whose id matches (#menu, #cart ...) -->
+    <!-- nav = navigation links-->
     <nav>
       <div class="logo">Brew &amp; Bean Cafe</div>
       <ul>
@@ -24,13 +24,12 @@
     </nav>
   </header>
 
-  <!-- main = the main content. The whole website is one page; the user can scroll or click the links -->
+  <!-- main = the main content.-->
   <main>
 
     <!-- ===== HOME ===== -->
     <section id="home">
 
-      <!-- Hero: big welcome box -->
       <div class="hero">
         <!-- A simple SVG picture made with a circle and a rectangle -->
         <svg width="80" height="80">
@@ -44,7 +43,6 @@
 
       <!-- Features: three boxes side by side (Flexbox in CSS) -->
       <div class="features">
-        <!-- article = a small independent block of content -->
         <article>
           <h2>Fresh Coffee</h2>
           <p>Espresso, Cappuccino, Latte and Cold Coffee.</p>
@@ -105,8 +103,6 @@
         <img src="images/cafe2.jpg" alt="Fresh snacks">
         <img src="images/cafe3.jpg" alt="Sweet desserts">
         <img src="images/cafe4.jpg" alt="Cold coffee">
-        <img src="images/cafe5.jpg" alt="Cosy seating">
-        <img src="images/cafe6.jpg" alt="Waffles">
       </div>
     </section>
 
