@@ -28,8 +28,8 @@
       <p>Choose a flavour, add toppings and click "Add to Cart".</p>
     </section>
 
-    <!-- Filter: radio buttons. Same name="category" means only ONE can be selected.
-         onchange="showMenu()" runs the JavaScript function when the user picks another one. -->
+    <!-- Filter: radio buttons. Same name="category" means only ONE can be selected.-->
+      <!--   onchange="showMenu()" runs the JavaScript function when the user picks another one. -->
     <section class="filters">
       <b>Show:</b>
       <label><input type="radio" name="category" value="All" checked onchange="showMenu()"> All</label>
@@ -38,7 +38,7 @@
       <label><input type="radio" name="category" value="Desserts" onchange="showMenu()"> Desserts</label>
     </section>
 
-    <!-- This section is empty here. script.js fills it with the menu cards. -->
+    <!-- This section is empty here filled by the script.js fills  with the menu cards. -->
     <section id="menu-list" class="grid"></section>
 
     <!-- Cart section. script.js fills the list and the total. -->
