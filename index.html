@@ -11,8 +11,9 @@
 
   <!-- header = top part of the page. It stays at the top while scrolling (see style.css) -->
   <header>
-    <!-- nav = navigation links. Each link goes to the section whose id matches (#menu, #cart ...) -->
-    <nav>
+    <!-- nav = navigation links. Each link goes to the section whose id matches (#menu, #cart ...)
+         aria-label gives the menu a name for screen readers (accessibility) -->
+    <nav aria-label="Main menu">
       <div class="logo">Brew &amp; Bean Cafe</div>
       <ul>
         <li><a href="#home">Home</a></li>
@@ -61,9 +62,18 @@
 
       <div class="about">
         <h2>About Us</h2>
-        <p>Brew &amp; Bean Cafe is a small cafe where friends meet and enjoy good food.
+        <!-- strong = important text (bold), em = emphasis (italic), br = line break -->
+        <p>Brew &amp; Bean Cafe is a <strong>small cafe</strong> where friends meet and enjoy <em>good food</em>.<br>
            Choose your items, pick a flavour, add toppings and order online.</p>
       </div>
+
+      <hr> <!-- hr = a horizontal line -->
+
+      <!-- aside = a side note, not the main content. mark = highlighted text -->
+      <aside>
+        <h3>Today's Special</h3>
+        <p>Cappuccino + Brownie combo for only <mark>&#8377;250</mark>!</p>
+      </aside>
     </section>
 
     <!-- ===== MENU ===== -->
@@ -99,13 +109,24 @@
     <!-- ===== GALLERY ===== -->
     <section id="gallery">
       <h2 class="title">Gallery</h2>
-      <!-- img = picture. src = file name, alt = text for screen readers and when the picture does not load -->
+      <!-- figure = a picture with its caption. figcaption = the caption text.
+           img: src = file name, alt = text for screen readers and when the picture does not load -->
       <div class="gallery">
-        <img src="hazelnut_cappuccino.jpeg" alt="Cappuccino">
-        <img src="snacks.jpeg" alt="Fresh snacks">
-        <img src="desserts.jpeg" alt="Sweet desserts">
-        <img src="cold-coffee.jpeg" alt="Cold coffee">
+        <figure><img src="images/cafe1.jpg" alt="Cappuccino"><figcaption>Cappuccino</figcaption></figure>
+        <figure><img src="images/cafe2.jpg" alt="Fresh snacks"><figcaption>Fresh Snacks</figcaption></figure>
+        <figure><img src="images/cafe3.jpg" alt="Sweet desserts"><figcaption>Sweet Desserts</figcaption></figure>
+        <figure><img src="images/cafe4.jpg" alt="Cold coffee"><figcaption>Cold Coffee</figcaption></figure>
+        <figure><img src="images/cafe5.jpg" alt="Cosy seating"><figcaption>Cosy Seating</figcaption></figure>
+        <figure><img src="images/cafe6.jpg" alt="Waffles"><figcaption>Waffles</figcaption></figure>
       </div>
+
+      <h2 class="title">Watch Our Cafe</h2>
+      <!-- video = plays a video file. controls = shows the play and pause buttons.
+           poster = the picture shown before the video starts. -->
+      <video controls poster="images/cafe1.jpg">
+        <source src="images/cafe.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
     </section>
 
     <!-- ===== CONTACT ===== -->
@@ -127,14 +148,23 @@
           <span class="error" id="name-error"></span> <!-- error message appears here -->
 
           <label for="phone">Phone Number</label>
-          <!-- type="tel" is for phone numbers, maxlength limits the digits -->
-          <input type="tel" id="phone" placeholder="10 digit mobile number" maxlength="10" required>
+          <!-- type="tel" is for phone numbers, maxlength limits the digits.
+               pattern = the browser checks the text with this rule: 10 digits, the first one 6, 7, 8 or 9 -->
+          <input type="tel" id="phone" placeholder="10 digit mobile number" maxlength="10" pattern="[6-9][0-9]{9}" title="Enter 10 digits starting with 6, 7, 8 or 9" required>
           <span class="error" id="phone-error"></span>
 
           <label for="email">Email</label>
           <!-- type="email" makes the browser check the email format -->
           <input type="email" id="email" placeholder="you@example.com" required>
           <span class="error" id="email-error"></span>
+
+          <label for="subject">Subject</label>
+          <!-- select = a dropdown list. option = one choice in the list -->
+          <select id="subject">
+            <option>Feedback</option>
+            <option>Order Query</option>
+            <option>Other</option>
+          </select>
 
           <label for="message">Message</label>
           <textarea id="message" rows="4" placeholder="Write your message" required></textarea>
@@ -177,8 +207,13 @@
 
   <!-- footer = bottom part of the page -->
   <footer>
+    <!-- address = contact details of the cafe -->
+    <address>Brew &amp; Bean Cafe, Phagwara, Punjab | Email: hello@brewandbean.example</address>
     <p>&copy; 2026 Brew &amp; Bean Cafe | CSE326 CA1 Project</p>
   </footer>
+
+  <!-- A button that stays in the bottom right corner (position: fixed in style.css) and goes to the top -->
+  <a href="#home" class="btn top-btn">&uarr; Top</a>
 
   <!-- The JavaScript file is linked at the bottom so the page loads first -->
   <script src="script.js"></script>
